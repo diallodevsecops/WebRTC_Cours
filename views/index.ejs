@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <div class="chat-container">
+
+        <!-- Page de connexion -->
+        <div class="login-page" id="loginPage">
+            <div class="login-form">
+                <h2>Rejoindre le Chat</h2>
+
+                <input
+                    type="text"
+                    id="usernameInput"
+                    placeholder="Votre nom d'utilisateur"
+                    maxlength="20"
+                >
+
+                <button id="loginBtn">Se connecter</button>
+            </div>
+        </div>
+
+        <!-- Page de chat -->
+        <div class="chat-page" id="chatPage" style="display: none;">
+
+            <div class="chat-header">
+                <h3>Chat en ligne</h3>
+
+                <div class="users-count">
+                    <span id="numUsers">0</span> utilisateur(s) connecté(s)
+                </div>
+            </div>
+
+            <div class="messages-container" id="messages">
+                <!-- Les messages apparaîtront ici -->
+            </div>
+
+            <div class="input-container">
+
+                <input
+                    type="text"
+                    id="messageInput"
+                    placeholder="Tapez votre message..."
+                    maxlength="500"
+                >
+
+                <button id="sendBtn">Envoyer</button>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/client.js"></script>
+</body>
+</html>
